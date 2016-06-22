@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ie.deloitte.sample.service.SamplebookLocalService" class="ie.deloitte.sample.service.impl.SamplebookLocalServiceImpl" />
+	<bean id="ie.deloitte.sample.service.persistence.SamplebookPersistence" class="ie.deloitte.sample.service.persistence.SamplebookPersistenceImpl" parent="basePersistence" />
+	<bean id="ie.deloitte.sample.service.SampleentryLocalService" class="ie.deloitte.sample.service.impl.SampleentryLocalServiceImpl" />
+	<bean id="ie.deloitte.sample.service.SampleentryService" class="ie.deloitte.sample.service.impl.SampleentryServiceImpl" />
+	<bean id="ie.deloitte.sample.service.persistence.SampleentryPersistence" class="ie.deloitte.sample.service.persistence.SampleentryPersistenceImpl" parent="basePersistence" />
+</beans>
