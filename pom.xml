@@ -38,9 +38,24 @@
 	     6.2.4
          <!--${liferay.maven.plugin.version}-->
        </liferay.maven.plugin.version>
+	   <junit.version>4.11</junit.version>
+	   <selenium.java.version>2.53.0</selenium.java.version>
     </properties>
 	
 	<dependencies>
+		<dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>${junit.version}</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	    <dependency>
+		  <groupId>org.seleniumhq.selenium</groupId>
+		  <artifactId>selenium-java</artifactId>
+		  <version>2.53.0</version>
+		</dependency>
+		
        <dependency>
          <groupId>com.liferay.portal</groupId>
          <artifactId>portal-client</artifactId>
