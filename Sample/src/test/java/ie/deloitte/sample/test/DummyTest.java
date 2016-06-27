@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,17 +37,23 @@ public class DummyTest{
 	public void openBrowser() throws MalformedURLException {
 		baseUrl = System.getProperty("webdriver.base.url");
 	    //System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-		// issue with FF 47.0
-	    //driver = new FirefoxDriver();//new ChromeDriver();
+		// issue with FF 47.0 or roll back to FF46.0.1
+	    driver = new FirefoxDriver();//new ChromeDriver();
 		// using FF 46.0.1
-		FirefoxProfile profile = new FirefoxProfile();
-		driver = new FirefoxDriver(
-		                 new FirefoxBinary( 
-		                		 new File("c:/apps/FirefoxPortable/FirefoxPortable.exe")), 
-		                 			profile);
-	    DesiredCapabilities capability = DesiredCapabilities.firefox();
+//		FirefoxProfile profile = new FirefoxProfile();
+//		driver = new FirefoxDriver(
+//		                 new FirefoxBinary( 
+//		                		 new File("c:/apps/FirefoxPortable/FirefoxPortable.exe")), 
+//		                 			profile);
+		// using marionette driver
+//		System.setProperty("webdriver.gecko.driver","C:\\apps\\marionette\\wires.exe");
+//	    DesiredCapabilities capability = DesiredCapabilities.firefox();
+//	    capability.setCapability("marionette", true);
+//	    driver = new FirefoxDriver(capability);
+//		driver = new MarionetteDriver();
+		
 		//DesiredCapabilities capability = new DesiredCapabilities();
-		//capability = capability.firefox();//chrome();
+		//capability = capability.chrome();
 		//capability.setBrowserName("chrome");
 		//capability.setVersion("51.0");
 		//capability.setCapability("jenkins.label","chrome51");
