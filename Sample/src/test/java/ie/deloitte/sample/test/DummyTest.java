@@ -19,7 +19,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,7 +36,14 @@ public class DummyTest{
 	public void openBrowser() throws MalformedURLException {
 		baseUrl = System.getProperty("webdriver.base.url");
 	    //System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
-	    driver = new FirefoxDriver();//new ChromeDriver();
+		// issue with FF 47.0
+	    //driver = new FirefoxDriver();//new ChromeDriver();
+		// using FF 46.0.1
+		FirefoxProfile profile = new FirefoxProfile();
+		driver = new FirefoxDriver(
+		                 new FirefoxBinary( 
+		                		 new File("c:/apps/FirefoxPortable/FirefoxPortable.exe")), 
+		                 			profile);
 	    DesiredCapabilities capability = DesiredCapabilities.firefox();
 		//DesiredCapabilities capability = new DesiredCapabilities();
 		//capability = capability.firefox();//chrome();
@@ -50,7 +59,7 @@ public class DummyTest{
 	  
 	@After
 	public void saveScreenshotAndCloseBrowser() throws IOException {
-	    //screenshotHelper.saveScreenshot("screenshot.png");
+	    screenshotHelper.saveScreenshot("screenshot.png");
 	    driver.quit();
 	}
 	  
