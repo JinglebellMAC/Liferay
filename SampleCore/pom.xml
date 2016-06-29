@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ie.deloitte</groupId>
+    <artifactId>Liferay</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>ie.deloitte</groupId>
+  <artifactId>SampleCore</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>SampleCore</name>
+  <url>http://maven.apache.org</url>
+  <distributionManagement>  
+		 <!-- Publish the versioned releases here 
+		 <repository>  
+		  <id>vineetmanohar-nexus</id>  
+		  <name>vineetmanohar nexus</name>  
+		  <url>dav:http://localhost:8091/repository/liferay-releases/</url>  
+		 </repository>  -->  
+		  
+		 <!-- Publish the versioned releases here -->  
+		 <snapshotRepository>  
+		  <id>liferay-snapshots</id>  
+		  <name>liferay-snapshots</name>  
+		  <url>http://localhost:8091/repository/liferay-snapshots/</url>  
+		 </snapshotRepository>  
+	</distributionManagement>
+  
+</project>
