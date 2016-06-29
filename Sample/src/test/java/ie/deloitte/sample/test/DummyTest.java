@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -36,9 +37,11 @@ public class DummyTest{
 	@Before
 	public void openBrowser() throws MalformedURLException {
 		baseUrl = System.getProperty("webdriver.base.url");
-	    //System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
+	    System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe");
 		// issue with FF 47.0 or roll back to FF46.0.1
-	    driver = new FirefoxDriver();//new ChromeDriver();
+	    driver = new FirefoxDriver();
+//	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//	    driver = new ChromeDriver();
 		// using FF 46.0.1
 //		FirefoxProfile profile = new FirefoxProfile();
 //		driver = new FirefoxDriver(
