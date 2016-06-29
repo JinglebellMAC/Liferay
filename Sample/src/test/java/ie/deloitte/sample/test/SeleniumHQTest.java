@@ -7,7 +7,7 @@ import io.ddavison.conductor.Locomotive;
 import io.ddavison.conductor.Browser;
 
 @Config(
-        browser = Browser.CHROME,
+        browser = Browser.FIREFOX,
         url     = "http://seleniumhq.org"
 )
 public class SeleniumHQTest extends Locomotive {
